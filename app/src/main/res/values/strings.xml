@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="error_message">Failed to load. Please try again later!</string>
+    <string name="popular">Most Popular</string>
+    <string name="rated">Highest Rated</string>
+    <string name = "movie_detail">Movie Detail</string>
+</resources>
