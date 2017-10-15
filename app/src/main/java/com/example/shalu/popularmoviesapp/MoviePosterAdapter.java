@@ -1,13 +1,17 @@
 package com.example.shalu.popularmoviesapp;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.shalu.popularmoviesapp.Utilities.NetworkUtils;
+import com.example.shalu.popularmoviesapp.data.MovieContract;
+import com.example.shalu.popularmoviesapp.utilities.NetworkUtils;
 import com.squareup.picasso.Picasso;
 
 import java.net.URL;
@@ -15,6 +19,7 @@ import java.net.URL;
 public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.PosterViewHolder> {
 
     private String[] mPosterPaths;
+    private Cursor mCursor;
     private OnMovieItemClickListener mClickHandler;
 
     MoviePosterAdapter(OnMovieItemClickListener clickListener) {
@@ -54,8 +59,30 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
 
     @Override
     public void onBindViewHolder(PosterViewHolder posterViewHolder, int position) {
-        URL url = NetworkUtils.buildImagePosterUrl(mPosterPaths[position]);
-        Picasso.with(posterViewHolder.mImgView.getContext()).load(url.toString()).into(posterViewHolder.mImgView);
+        URL url=null;
+        if(mPosterPaths!=null)
+            url = NetworkUtils.buildImagePosterUrl(mPosterPaths[position]);
+        if(mCursor!=null) {
+            mCursor.moveToPosition(position);
+            int imgIndex = mCursor.getColumnIndex(MovieContract.MovieEntry.COLUMN_POSTER);
+            url = NetworkUtils.buildImagePosterUrl(mCursor.getString(imgIndex));
+        }
+        if(url!=null)
+        Picasso.with(posterViewHolder.mImgView.getContext())
+                    .load(url.toString())
+                    .placeholder(R.drawable.user_placeholder)
+                    .error(R.drawable.user_placeholder_error)
+                    .into(posterViewHolder.mImgView);
+
+       /* else if(mPosterPaths == null && mCursor!=null) {
+
+            byte[] img = mCursor.getBlob(imgIndex);
+            Bitmap bitmapImg = getImage(img);
+            posterViewHolder.mImgView.setImageBitmap(bitmapImg);
+        }*/
+    }
+    public static Bitmap getImage(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
     /**
@@ -66,10 +93,12 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
     @Override
     public int getItemCount() {
 
-        if(mPosterPaths == null)
+        if(mPosterPaths == null && mCursor==null)
             return 0;
-        else
+        else if(mCursor == null)
             return mPosterPaths.length;
+        else
+            return mCursor.getCount();
     }
 
     /**
@@ -78,7 +107,13 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
      */
 
     public void setMoviePosterPaths(String[] moviePosterPaths) {
+        mCursor = null;
         mPosterPaths = moviePosterPaths;
+        notifyDataSetChanged();
+    }
+    public void setOfflineMovies(Cursor data){
+        mPosterPaths = null;
+        mCursor = data;
         notifyDataSetChanged();
     }
 

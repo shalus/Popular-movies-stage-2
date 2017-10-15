@@ -1,6 +1,5 @@
-package com.example.shalu.popularmoviesapp.Utilities;
+package com.example.shalu.popularmoviesapp.utilities;
 
-import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;

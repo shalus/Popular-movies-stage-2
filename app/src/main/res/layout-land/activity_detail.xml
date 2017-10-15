@@ -24,8 +24,7 @@
                 android:layout_width="@dimen/movie_poster_width"
                 android:layout_height="@dimen/movie_poster_height"
                 android:id="@+id/iv_movie_poster"
-
-             />
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,11 +37,11 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/release_date_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_release_date"
-                android:layout_below="@+id/tv_movie_rating"
                 android:layout_alignLeft="@+id/tv_movie_rating"
+                android:layout_below="@+id/tv_movie_rating"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_toRightOf ="@+id/iv_movie_poster"
 
@@ -54,13 +53,13 @@
                 android:src="@drawable/ic_favorite_border_black_24dp"
                 android:layout_toRightOf="@+id/iv_movie_poster"
                 android:onClick="toggleFavorites"
-                android:layout_marginBottom="@dimen/std_margin"
-                android:layout_marginLeft="@dimen/std_margin"/>
+                android:layout_margin="@dimen/std_margin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_overview"
-                android:layout_below="@+id/iv_movie_poster"
+                android:layout_toRightOf="@+id/tv_release_date"
+                android:layout_marginLeft="10dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 android:textSize="16sp"
                 android:layout_marginBottom="@dimen/std_margin"/>
@@ -73,7 +72,7 @@
                 android:textSize="@dimen/std_text_size"
                 android:textStyle="bold"
                 android:layout_marginBottom="@dimen/std_margin"
-                android:layout_below="@+id/tv_overview"
+                android:layout_below="@+id/iv_movie_poster"
                 />
 
 
@@ -83,12 +82,12 @@
                 android:id="@+id/rv_trailers"
                 android:layout_below="@+id/tv_label_trailers"
                 android:visibility="invisible"/>
-        <View
-            android:id="@+id/separator"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/separator_height"
-            android:background="@color/colorPrimary"
-            android:layout_below="@+id/rv_trailers"/>
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/separator_height"
+                android:background="@color/colorPrimary"
+                android:layout_below="@+id/rv_trailers"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -100,13 +99,14 @@
                 android:textStyle="bold"
                 android:layout_below="@+id/separator"
                 />
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rv_reviews"
-            android:layout_below="@+id/tv_label_reviews"
-            android:visibility="invisible"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_reviews"
+                android:layout_below="@+id/tv_label_reviews"
+                android:visibility="invisible"/>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>
 </layout>
+

@@ -1,6 +1,7 @@
-package com.example.shalu.popularmoviesapp.Utilities;
+package com.example.shalu.popularmoviesapp.utilities;
 
 import android.net.Uri;
+import android.support.compat.BuildConfig;
 import android.util.Log;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.Scanner;
 
         /* Insert API Key here */
         private static final String api_key = "";
+       // private static final String api_key = BuildConfig.API_KEY;
 
         private final static String API_PARAM = "api_key";
         /**
@@ -62,6 +64,25 @@ import java.util.Scanner;
             Log.v(TAG, "Poster URL " + url);
             return url;
         }
+
+        /**
+         * method to generate the url from base url for fetching trailers or reviews of a particular movie
+         * @param id the id that identifies a movie
+         * @param option this could be either videos or reviews
+         * @return the url formed
+         */
+        public static URL buildOtherUrl(String id,String option) {
+            Uri builtUri = Uri.parse(MD_BASE_URL).buildUpon().appendPath(id).appendPath(option).appendQueryParameter(API_PARAM,api_key).build();
+            URL url = null;
+            try {
+                url = new URL(builtUri.toString());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            return url;
+        }
+
+
 
         /**
          * This method returns the entire result from the HTTP response.

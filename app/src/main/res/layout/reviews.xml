@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_border"
+    android:layout_marginTop="@dimen/layout_margin_top">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tv_author"
+    tools:text="Shalu Subbiah"
+    android:textStyle="bold"
+     style="@style/Base.TextAppearance.AppCompat.Body1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/review_content_height"
+        android:id="@+id/tv_content"
+        tools:text="So this guy in the red suit came and broke some records...\r\n\r\nI was not a Deadpool fan and I'm still not, but like any superhero films I'd pleasure watching it. The other reason was, we had other superheroes in our time, so this guy is kind of new to me. It was a stunning launch to the big screen for the Deadpool as well as for this new director. This film was merely an introduction tale than a fully stretched story. Like how a human becomes a mutant and later who seeks a revenge for ruining his natural life. But it yet to explain a couple of things and I hope it all will be revealed in its sequel.\r\n\r\nI am happy for Ryan Reynolds to get another chance, because his previous comic book character did not received well. I certainly liked the film, but nowadays there are plenty of superheroes to choose, in that, Deadpool's not in my top 5. So I am happy he joined the 'X-Men', because I never liked the boring 'X-Men' films or its characters, but I do love its spinoff 'Wolverine'. I'll definitely look forward for his solo films like 'Wolverine'.\r\n\r\nThis film broke a few records like the best box office so far for an 'X-Men' installment. A short film with the present and flashback narration shared the screen piece by piece alternatively. This was a strong R rated film so far I have seen in a superhero theme and there were plenty of other films referred. No offense to the people who liked it (and those who are going watch will do the same), but in my personal opinion it was a bit over-celebrated.\r\n\r\n6½/10"/>
+/>
+</LinearLayout>

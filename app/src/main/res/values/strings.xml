@@ -1,7 +1,23 @@
 <resources>
     <string name="app_name">Popular Movies</string>
     <string name="error_message">Failed to load. Please try again later!</string>
+    <string name = "network_Error">Please check your internet connection.</string>
     <string name="popular">Most Popular</string>
     <string name="rated">Highest Rated</string>
     <string name = "movie_detail">Movie Detail</string>
+    <string name = "favorites">My Favorites</string>
+    <string name="pref_default">popular</string>
+    <string name="pref_fav">favourite</string>
+    <string name="pref_rated">top_rated</string>
+    <string name="content_authority">com.example.shalu.popularmoviesapp</string>
+    <string name="Reviews">Reviews</string>
+    <string name="Trailers">Trailers</string>
+
+    <string name="title">TITLE</string>
+    <string name="id">ID</string>
+    <string name="rating">RATING"</string>
+    <string name="release_date">RELEASE_DATE</string>
+    <string name="img_poster">IMG</string>
+    <string name="desc">DESC</string>
+    <string name="favState">FAV_STATE</string>
 </resources>
