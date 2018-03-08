@@ -1,17 +1,22 @@
 <resources>
     <string name="app_name">Popular Movies</string>
+    <string name="app_version">1.0</string>
     <string name="error_message">Failed to load. Please try again later!</string>
     <string name = "network_Error">Please check your internet connection.</string>
     <string name="popular">Most Popular</string>
     <string name="rated">Highest Rated</string>
     <string name = "movie_detail">Movie Detail</string>
     <string name = "favorites">My Favorites</string>
+    <string name="about">About</string>
     <string name="pref_default">popular</string>
     <string name="pref_fav">favourite</string>
     <string name="pref_rated">top_rated</string>
-    <string name="content_authority">com.example.shalu.popularmoviesapp</string>
+    <string name="content_authority">com.shalu.popularmoviesapp</string>
     <string name="Reviews">Reviews</string>
     <string name="Trailers">Trailers</string>
+    <string name="about_text">Popular movies helps view the top list of popular and highest rated movies and also see the description, rating, trailers and reviews of them. You can add any to your favourite movies list. Hope the app helps you chose which movies to watch. </string>
+    <string name="copyright_heading">Copyright</string>
+    <string name="copyright_text">The movie images and other details have been extracted from TMDB.org (http://www.themoviedb.org)</string>
 
     <string name="title">TITLE</string>
     <string name="id">ID</string>
