@@ -14,3 +14,14 @@ API key can be requested from themoviedb.org
 
 ## Screenshots
 
+<img src="https://raw.githubusercontent.com/shalus/Popular-movies-stage-2/master/Screenshots/Screenshot_2017-11-10-20-00-58.png" width="220" height="400"/>
+
+<img src="https://raw.githubusercontent.com/shalus/Popular-movies-stage-2/master/Screenshots/Screenshot_2017-11-10-20-01-21.png" width="220" height="400"/>
+
+<img src="https://raw.githubusercontent.com/shalus/Popular-movies-stage-2/master/Screenshots/Screenshot_2017-11-10-20-01-46.png" width="220" height="400"/>
+
+<img src="https://raw.githubusercontent.com/shalus/Popular-movies-stage-2/master/Screenshots/Screenshot_2017-11-10-20-01-55.png" width="220" height="400"/>
+
+<img src="https://raw.githubusercontent.com/shalus/Popular-movies-stage-2/master/Screenshots/Screenshot_2017-11-10-20-06-22.png" width="300" height="150"/>
+
+
